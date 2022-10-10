@@ -1,19 +1,13 @@
 package ozi.lawkay.elekere.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import ozi.lawkay.elekere.models.Elekere;
-
 import javax.swing.*;
 
-@Service
-public class ElekereService {
-    @Autowired
-    private JFrame jFrame;
-    @Autowired
-    private Elekere elekere;
-
-    public void getTime(){
-
-    }
+public interface ElekereService {
+    JFrame displayTimeOfTheDay() throws InterruptedException;
+    String displayDayOfTheWeek();
+    String displayMonthOfTheYear();
+    String displayDateAndTime();
+    String displayDateAlone();
+    String editTitle(String title);
+    void minimise();
 }
