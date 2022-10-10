@@ -1,9 +1,9 @@
 package ozi.lawkay.elekere.services;
 
-import org.springframework.stereotype.Service;
+import javax.swing.*;
 
 public interface ElekereService {
-    String displayTimeOfTheDay();
+    JFrame displayTimeOfTheDay() throws InterruptedException;
     String displayDayOfTheWeek();
     String displayMonthOfTheYear();
     String displayDateAndTime();
