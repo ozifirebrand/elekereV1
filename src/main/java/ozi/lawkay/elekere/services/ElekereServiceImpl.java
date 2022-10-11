@@ -1,59 +1,45 @@
 package ozi.lawkay.elekere.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ozi.lawkay.elekere.models.Elekere;
-
-import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Service
+@Slf4j
 public class ElekereServiceImpl implements ElekereService {
-    private final Elekere elekere;
-    private final SimpleDateFormat timeFormat = new SimpleDateFormat("hh-mm-ss");
-    private final SimpleDateFormat dayFormat = new SimpleDateFormat("eeee-dd-MM-yyyy");
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
 
+    private final SimpleDateFormat timeFormat = new SimpleDateFormat("hh-mm-ss a");
+    private final SimpleDateFormat dayFormat = new SimpleDateFormat("EEEEE");
+    private final SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM");
+    private final SimpleDateFormat dateAndTimeFormat = new SimpleDateFormat("EEEEE dd-MMMM-yyyy hh-mm-ss a");
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMg-yyyy");
 
-    public ElekereServiceImpl(Elekere elekere){
-        this.elekere = elekere;
-    }
 
     @Override
-    public JFrame displayTimeOfTheDay() {
-        while (true){
-            String time = timeFormat.format(Calendar.getInstance().getTime());
-            JLabel label = elekere.getText();
-            label.setText(time);
-            elekere.getDisplay().add(label);
+    public String displayTimeOfTheDay() {
+        return "Time is "+timeFormat.format(Calendar.getInstance().getTime());
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-        }
     }
 
     @Override
     public String displayDayOfTheWeek() {
-        return null;
+        return "Day is "+dayFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayMonthOfTheYear() {
-        return null;
+        return "Month is "+monthFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayDateAndTime() {
-        return null;
+        return "Date and time is "+dateAndTimeFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayDateAlone() {
-        return null;
+        return "Date is "+dateFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
