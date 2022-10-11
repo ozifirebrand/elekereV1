@@ -1,12 +1,10 @@
 package ozi.lawkay.elekere.services;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Service
-@Slf4j
 public class ElekereServiceImpl implements ElekereService {
 
     private final SimpleDateFormat timeFormat = new SimpleDateFormat("hh-mm-ss a");
