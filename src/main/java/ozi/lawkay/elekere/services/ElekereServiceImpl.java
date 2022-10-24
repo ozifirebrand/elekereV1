@@ -22,22 +22,22 @@ public class ElekereServiceImpl implements ElekereService {
 
     @Override
     public String displayDayOfTheWeek() {
-        return "Today is "+dayFormat.format(Calendar.getInstance().getTime());
+        return dayFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayMonthOfTheYear() {
-        return "Month is "+monthFormat.format(Calendar.getInstance().getTime());
+        return monthFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayDateAndTime() {
-        return "Date and time is "+dateAndTimeFormat.format(Calendar.getInstance().getTime());
+        return dateAndTimeFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
     public String displayDateAlone() {
-        return "Date is "+dateFormat.format(Calendar.getInstance().getTime());
+        return dateFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override
