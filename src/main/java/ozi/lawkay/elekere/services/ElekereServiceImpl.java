@@ -11,7 +11,7 @@ public class ElekereServiceImpl implements ElekereService {
     private final SimpleDateFormat dayFormat = new SimpleDateFormat("EEEEE");
     private final SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM");
     private final SimpleDateFormat dateAndTimeFormat = new SimpleDateFormat("EEEEE dd-MMMM-yyyy hh-mm-ss a");
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMg-yyyy");
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
 
     @Override
@@ -22,7 +22,7 @@ public class ElekereServiceImpl implements ElekereService {
 
     @Override
     public String displayDayOfTheWeek() {
-        return "Day is "+dayFormat.format(Calendar.getInstance().getTime());
+        return "Today is "+dayFormat.format(Calendar.getInstance().getTime());
     }
 
     @Override

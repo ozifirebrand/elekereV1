@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elekere (Clock)</title>
+</head>
+<body>
+<div>
+    <h4>Time is </h4>
+    <h1><span th:text="${time}">12:00</span></h1>
+    <a th:href="@{/elekere/day}">
+        <input type="button" value="Show day">
+        <br>
+        <h3><span th:text="${day}"></span></h3>
+    </a>
+</div>
+</body>
+</html>
